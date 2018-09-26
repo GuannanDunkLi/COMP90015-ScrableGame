@@ -17,7 +17,14 @@ public class gui {
 	private Socket socket;
 	private BufferedWriter ClientWriter;
 	private ArrayList<JButton> buttons;
+	private JTextArea textOutput;
 	
+	public JTextArea getTextOutput() {
+		return textOutput;
+	}
+	public void setTextOutput(JTextArea textOutput) {
+		this.textOutput = textOutput;
+	}
 	public ArrayList<JButton> getButtons() {
 		return buttons;
 	}
@@ -62,12 +69,17 @@ public class gui {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						String s = JOptionPane.showInputDialog("Please input the letter from keyboard");
-						button.setText(s);
+						
 						try {
-							System.out.println(row+" "+col+" "+s);
+							if (socket==null) {
+							System.out.println("socket is empty");
+							}
 							ClientWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"));
-							ClientWriter.write("add"+" "+row+" "+col+" "+s+"\n");
-							ClientWriter.flush();
+							if ((s!=null) && s.length()!=0) {
+								button.setText(s);
+								ClientWriter.write("add"+" "+row+" "+col+" "+s+"\n");
+								ClientWriter.flush();
+							}
 //							command(socket, "add", " "+row+" "+col+" "+s);
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
@@ -87,13 +99,58 @@ public class gui {
 //		p2.add(ta);
 		frame.getContentPane().add(p1,BorderLayout.WEST);
 		frame.getContentPane().add(p2,BorderLayout.EAST);
+		p2.setLayout(null);
+		Font font = new Font("Arial", Font.BOLD, 22); // Unify fonts
+		JLabel wordLabel = new JLabel("User Information");
+		wordLabel.setFont(font);
+		wordLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		wordLabel.setBounds(35, 15, 350, 40);
+		p2.add(wordLabel);
 		
-		textField = new JTextField();
-		p2.add(textField);
-		textField.setColumns(50);
+		// User list area
+		textOutput = new JTextArea();
+		textOutput.setFont(new Font("Arial", Font.BOLD, 30));
+		JScrollPane jslp = new JScrollPane(textOutput);
+		jslp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jslp.setBounds(15, 60, 400, 350);
+		p2.add(jslp);
 		
-		JButton btnNewButton = new JButton("New button");
-		p2.add(btnNewButton);
+		JCheckBox chckbxHorizontal = new JCheckBox("Horizontal");
+		chckbxHorizontal.setFont(font);
+		chckbxHorizontal.setBounds(70, 430, 320, 55);
+		p2.add(chckbxHorizontal);
+		
+		JCheckBox chckbxVertical = new JCheckBox("Vertical");
+		chckbxVertical.setFont(font);
+		chckbxVertical.setBounds(70, 480, 320, 55);
+		p2.add(chckbxVertical);
+		
+		JButton submitButton = new JButton("Submit");
+		submitButton.setBounds(35, 580, 150, 60);
+		submitButton.setFont(font);
+		p2.add(submitButton);
+		submitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
+		JButton passButton = new JButton("Pass");
+		passButton.setBounds(260, 580, 150, 60);
+		passButton.setFont(font);
+		p2.add(passButton);
+		passButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+
+		JButton logoutButton = new JButton("Log Out");
+		logoutButton.setBounds(95, 690, 260, 60);
+		logoutButton.setFont(font);
+		p2.add(logoutButton);
+		logoutButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 //		frame.setVisible(true);
 	}
 //	public void command(Socket socket, String command, String inputStr) throws IOException {

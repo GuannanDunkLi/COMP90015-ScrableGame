@@ -1,5 +1,6 @@
 package wo.client;
 
+import java.awt.Font;
 import java.io.BufferedReader;
 
 import javax.swing.JOptionPane;
@@ -17,18 +18,34 @@ public class MessageListener extends Thread {
 		try {
 			String msg = null;
 			System.out.println("waiting");
+			int num = 1;
 			while((msg = reader.readLine()) != null) {
 //				gui.getMsg(msg);
 				System.out.println(msg);
-				String[] Msg = msg.split(" ");
-				String instruction = Msg[0];
-				int index = Integer.parseInt(Msg[1]);
-				String letter = (Msg[2]);
-				if (instruction.equals("add")) {
-					gui.getButtons().get(index).setText(letter);;
+//				if ("connection".equals(msg)) {
+//					gui.getTextOutput().append("client"+num+"\n");
+////					gui.getTextOutput().setText("client"+num);
+//					num++;
+//				}else {
+					String[] Msg = msg.split(" ");
+					String instruction = Msg[0];
+					
+					if (instruction.equals("add")) {
+						int index = Integer.parseInt(Msg[1]);
+						String letter = (Msg[2]);
+						gui.getButtons().get(index).setText(letter);
+					} else if (instruction.equals("connection")) {
+						String username = Msg[1];
+						String ip = Msg[2];
+						String port = Msg[3];
+						String score = Msg[4];
+						gui.getTextOutput().append(num+"."+username+" "+ip+" "+port+" "+score+"\n");
+						num++;
+					}
 				}
-			}
+//			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			JOptionPane.showMessageDialog(null,"Server closed.","Error", JOptionPane.PLAIN_MESSAGE);
 			System.exit(0);
 		} 

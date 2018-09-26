@@ -6,8 +6,10 @@ import java.util.List;
 public class ServerState {
 	private static ServerState instance;
 	private List<ClientConnection> connectedClients;
+	private List<User> users;
 	private ServerState() {
-		connectedClients = new ArrayList<>();
+		connectedClients = new ArrayList<ClientConnection>();
+		users = new ArrayList<User>();
 	}
 	public static synchronized ServerState getInstance() {
 		if(instance == null) {
@@ -23,5 +25,8 @@ public class ServerState {
 	}
 	public synchronized List<ClientConnection> getConnectedClients() {
 		return connectedClients;
+	}
+	public synchronized List<User> getUsers() {
+		return users;
 	}
 }

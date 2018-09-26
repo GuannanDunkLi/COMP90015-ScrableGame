@@ -36,6 +36,7 @@ public class GameServer {
 				clientConnection.start(); 
 				//Update the server state to reflect the new connected client
 				ServerState.getInstance().clientConnected(clientConnection);
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

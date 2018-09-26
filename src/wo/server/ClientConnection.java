@@ -28,6 +28,18 @@ public class ClientConnection extends Thread {
 	public void run() {
 		try {
 			System.out.println(Thread.currentThread().getName() + " - Reading instructions from client's " + clientNum + " connection");
+			ServerState ss = ServerState.getInstance();
+			User u1 = new User("jack","111","11",0);
+			User u2 = new User("tom","112","12",0);
+			User u3 = new User("jerry","113","13",0);
+			List<User> l = ss.getUsers();
+			l.add(u1);
+			l.add(u2);
+			l.add(u3);
+			for(int i = 0; i<l.size();i++) {
+				User u = l.get(i);
+				broadWrite("connection"+" "+u.getUsername()+" "+u.getIpAddress()+" "+u.getPort()+" "+u.getScore()+"\n");
+			}
 			String clientMsg = null;
 			while ((clientMsg = reader.readLine()) != null) {
 				System.out.println(Thread.currentThread().getName() + " - Instruction from client " + clientNum + " received: " + clientMsg);
@@ -44,17 +56,22 @@ public class ClientConnection extends Thread {
 				
 			}
 			clientSocket.close();
-			ServerState.getInstance().clientDisconnected(this);
+			ss.clientDisconnected(this);
 			System.out.println(Thread.currentThread().getName() + " - Client " + clientNum + " disconnected");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	//Needs to be synchronized because multiple threads can me invoking this method at the same time
-	public synchronized void write(String msg) {
+	public synchronized void broadWrite(String msg) {
 		try {
-			writer.write(msg);
-			writer.flush();
+			List<ClientConnection> clients = ServerState.getInstance().getConnectedClients();
+			for(ClientConnection client : clients) {
+				client.writer.write(msg);
+				client.writer.flush();
+			}
+//			writer.write(msg);
+//			writer.flush();
 			System.out.println(Thread.currentThread().getName() + " - Message sent to client " + clientNum);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -66,11 +83,12 @@ public class ClientConnection extends Thread {
 		String letter = Msg[3];
 		int index = row*20+col;
 		System.out.println(index);
+		broadWrite("add"+" "+index+" "+letter+"\n");
 		//Broadcast the client message to all other clients connected
 		//to the server.
-		List<ClientConnection> clients = ServerState.getInstance().getConnectedClients();
-		for(ClientConnection client : clients) {
-			client.write("add"+" "+index+" "+letter+"\n");
-		}
+//		List<ClientConnection> clients = ServerState.getInstance().getConnectedClients();
+//		for(ClientConnection client : clients) {
+//			client.write("add"+" "+index+" "+letter+"\n");
+//		}
 	}
 }
