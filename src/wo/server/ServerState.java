@@ -3,6 +3,8 @@ package wo.server;
 import java.util.ArrayList;
 import java.util.List;
 
+import wo.User;
+
 public class ServerState {
 	private static ServerState instance;
 	private List<ClientConnection> connectedClients;

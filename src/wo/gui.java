@@ -18,7 +18,14 @@ public class gui {
 	private BufferedWriter ClientWriter;
 	private ArrayList<JButton> buttons;
 	private JTextArea textOutput;
+	private User user;
 	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public JTextArea getTextOutput() {
 		return textOutput;
 	}
@@ -34,9 +41,11 @@ public class gui {
 	public gui() throws Exception {
 		initialize();
 	}
-	public gui(Socket socket) throws Exception {
-		initialize();
+	public gui(Socket socket,User user) throws Exception {
 		this.socket = socket;
+		this.user =user;
+		initialize();
+		
 	}
 
 	public JFrame getFrame() {
@@ -58,6 +67,12 @@ public class gui {
 		p1.setPreferredSize(new Dimension(1000, 800));
 		p2.setPreferredSize(new Dimension(400, 800));
 		buttons=new ArrayList<JButton>();
+		ClientWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"));
+//		if (user!=null) {
+//			
+//			ClientWriter.write("addUser"+" "+user.getUsername()+" "+user.getScore()+"\n");
+//			System.out.println("adduser");
+//		}
 		p1.setLayout(new GridLayout(20, 20));
 		for (int row = 0; row < 20; row++) {
 			for (int col = 0; col < 20; col++) {
@@ -74,7 +89,7 @@ public class gui {
 							if (socket==null) {
 							System.out.println("socket is empty");
 							}
-							ClientWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"));
+							
 							if ((s!=null) && s.length()!=0) {
 								button.setText(s);
 								ClientWriter.write("add"+" "+row+" "+col+" "+s+"\n");
@@ -151,6 +166,12 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		if (user!=null) {
+			
+			ClientWriter.write("addUser"+" "+user.getUsername()+" "+user.getScore()+"\n");
+			ClientWriter.flush();
+			System.out.println("adduser");
+		}
 //		frame.setVisible(true);
 	}
 //	public void command(Socket socket, String command, String inputStr) throws IOException {

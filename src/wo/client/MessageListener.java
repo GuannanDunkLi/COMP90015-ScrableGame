@@ -36,10 +36,12 @@ public class MessageListener extends Thread {
 						gui.getButtons().get(index).setText(letter);
 					} else if (instruction.equals("connection")) {
 						String username = Msg[1];
-						String ip = Msg[2];
-						String port = Msg[3];
-						String score = Msg[4];
-						gui.getTextOutput().append(num+"."+username+" "+ip+" "+port+" "+score+"\n");
+//						String ip = Msg[2];
+//						String port = Msg[3];
+//						String score = Msg[4];
+						String score = Msg[2];
+//						gui.getTextOutput().append(num+"."+username+" "+ip+" "+port+" "+score+"\n");
+						gui.getTextOutput().append(num+"."+username+" "+score+"\n");
 						num++;
 					}
 				}

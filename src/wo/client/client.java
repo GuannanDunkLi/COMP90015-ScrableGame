@@ -27,15 +27,15 @@ public class client {
 //			Game game = (Game) Naming.lookup("rmi://localhost:1099/Game");
 //			gui gui = new gui(socket);
 //			gui.getFrame().setVisible(true);
-			login login = new login(socket);
+			login login = new login(socket,ClientReader);
 //			login.getFrame().setVisible(true);
 			//Call methods on the remote object as if it was a local object
 //			game.add(gui);
 //			System.out.println("em");
 			// Launch a new thread in charge of listening for any messages that arrive through the socket's input stream (any data sent by the server)
 //			MessageListener ml = new MessageListener(ClientReader, gui);
-			MessageListener ml = new MessageListener(ClientReader, login.getGui());
-			ml.start();
+//			MessageListener ml = new MessageListener(ClientReader, login.getGui());
+//			ml.start();
 			
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -3,9 +3,12 @@ package wo;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import wo.client.MessageListener;
+
 import java.awt.TextField;
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.net.Socket;
 import java.util.Random;
 import java.awt.event.ActionEvent;
@@ -14,6 +17,7 @@ import java.awt.Font;
 
 public class login {
 	private Socket socket;
+	private BufferedReader reader;
 //	private JFrame frame;
 	private gui gui;
 //	public JFrame getFrame() {
@@ -33,8 +37,9 @@ public class login {
 	public login() throws Exception {
 		initialize();
 	}
-	public login(Socket socket) throws Exception {
+	public login(Socket socket,BufferedReader reader) throws Exception {
 		this.socket = socket;
+		this.reader =reader;
 		initialize();
 		
 		
@@ -44,10 +49,10 @@ public class login {
 	private void initialize() throws Exception {
 		final JFrame frame = new JFrame("Log in");
 //		if (socket!=null) {
-		gui = new gui(socket);
+//		gui = new gui(socket);
 //		System.out.println("Bushi null");
 //		}
-		gui.getFrame().setVisible(false);
+//		gui.getFrame().setVisible(false);
 		frame.setSize(680, 480);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,7 +76,12 @@ public class login {
 					JOptionPane.showMessageDialog(null, "User name is existed. Please change name.","Warning",JOptionPane.WARNING_MESSAGE);
 				} else {
 					try {
-						
+						User user = new User(textField.getText(),0);
+						gui = new gui(socket,user);
+						MessageListener ml = new MessageListener(reader, gui);
+						ml.start();
+//						User user = new User(textField.getText(),0);
+//						gui.setUser(user);
 						gui.getFrame().setVisible(true);
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
