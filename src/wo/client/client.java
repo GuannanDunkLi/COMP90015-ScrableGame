@@ -8,6 +8,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 import wo.client.MessageListener;
+import wo.InviteGUI;
 import wo.gui;
 import wo.login;
 import wo.remote.Game;
@@ -36,7 +37,6 @@ public class client {
 //			MessageListener ml = new MessageListener(ClientReader, gui);
 //			MessageListener ml = new MessageListener(ClientReader, login.getGui());
 //			ml.start();
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

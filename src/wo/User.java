@@ -1,10 +1,35 @@
 package wo;
 
+import java.util.ArrayList;
+
+import wo.server.ServerState;
+
 public class User {
 	private String username;
+//	private static User instance;
 //	private String ipAddress;
 //	private String port;
 	private int score;
+	private boolean iswait;
+//	private ArrayList<String> usernamelist;
+//	public static synchronized User getInstance() {
+//		if(instance == null) {
+//			instance = new User();
+//		}
+//		return instance;
+//	}
+//	public ArrayList<String> getUsernamelist() {
+//		return usernamelist;
+//	}
+//	public void setUsernamelist(ArrayList<String> usernamelist) {
+//		this.usernamelist = usernamelist;
+//	}
+	public boolean isIswait() {
+		return iswait;
+	}
+	public void setIswait(boolean iswait) {
+		this.iswait = iswait;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -21,6 +46,7 @@ public class User {
 //		this.ipAddress = ipAddress;
 //		this.port = port;
 		this.score = score;
+		this.iswait=true;
 	}
 //	public void setIpAddress(String ipAddress) {
 //		this.ipAddress = ipAddress;
