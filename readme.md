@@ -11,7 +11,7 @@ two commond lines (should run server first):
 
 **sequence diagram**
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/overview.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/overview.png)
 
 **functions**
 
@@ -57,7 +57,7 @@ two commond lines (should run server first):
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc1.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc2.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/ex2.png)
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc3.png)
 
