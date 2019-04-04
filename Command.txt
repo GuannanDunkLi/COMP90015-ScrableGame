@@ -1,0 +1,2 @@
+java -jar GameServer.jar 1234
+java -jar Client.jar localhost 1234
