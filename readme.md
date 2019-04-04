@@ -25,13 +25,13 @@ two commond lines (should run server first):
 
 ***
 
-##Login
+## Login
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/login1.png)
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/login2.png)
 
-##InvitationHall
+## InvitationHall
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/inv1.png)
 
@@ -39,7 +39,7 @@ two commond lines (should run server first):
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/inv3.png)
 
-##ScrabbleGameProcess
+## ScrabbleGameProcess
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/pro1.png)
 
@@ -53,7 +53,7 @@ two commond lines (should run server first):
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/pro6.png)
 
-##ExceptionHandling
+## ExceptionHandling
 
 ![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc1.png)
 
