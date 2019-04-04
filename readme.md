@@ -27,41 +27,41 @@ two commond lines (should run server first):
 
 ##Login
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/login1.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/login1.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/login2.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/login2.png)
 
 ##InvitationHall
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/inv1.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/inv1.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/inv2.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/inv2.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/inv3.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/inv3.png)
 
 ##ScrabbleGameProcess
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/pro1.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/pro1.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/pro2.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/pro2.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/pro3.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/pro3.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/pro4.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/pro4.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/pro5.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/pro5.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/pro6.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/pro6.png)
 
 ##ExceptionHandling
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/exc1.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc1.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/exc2.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc2.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/exc3.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc3.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/exc4.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc4.png)
 
-![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/images/exc5.png)
+![img](https://github.com/GuannanDunkLi/COMP90015-ScrableGame/blob/master/images/exc5.png)
 
