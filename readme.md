@@ -10,6 +10,7 @@ This distributed game used multithread and socket programming, and it achieved g
 two commond lines:
 1. java -jar GameServer.jar 1234 (1234 is the port number)
 2. java -jar Client.jar localhost 1234 (localhost could be specified to any IP address, and 1234 is the port number)
+
 hint: you should run server first, and you can run several clients to play this game
 
 **sequence diagram**
