@@ -3,7 +3,7 @@ COMP90015-Assignment2-ScrableGame
 
 ***
 
-This distributed game used multithread programming, and socket programming, has good performance in concurrency and robustness, I strongly recommend you to have a play
+This distributed game used multithread and socket programming, and it achieved good performance in concurrency and robustness, I strongly recommend you to have a play
 
 **to run this project**
 
